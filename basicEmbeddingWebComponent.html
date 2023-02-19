@@ -25,15 +25,15 @@
     <div style="width:800px; height:700px; border:1px solid green">
         <playground-ide editable-file-system line-numbers resizable>
 
-            <!-- Importing the Embedding API Library. -->
-            <!-- Learn more here:
-                https://help.tableau.com/current/api/embedding_api/en-us/docs/embedding_api_get.html -->
-            <script type="module" src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.js"></script>
-            
             <script type="sample/html" filename="index.html">
                 <!doctype html>
-                <body>
+                    <!-- Importing the Embedding API Library. -->
+                    <!-- Learn more here:
+                        https://help.tableau.com/current/api/embedding_api/en-us/docs/embedding_api_get.html -->
+                    <script type="module" src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.js"></script>
 
+                <body>
+                    <div style="width:400px; height:400px; border:1px solid blue"
                     <!-- Initialization of the Tableau visualization via web component. See more properties here:
                     https://help.tableau.com/current/api/embedding_api/en-us/docs/embedding_api_configure.html -->
                     <tableau-viz id="tableauViz" src="https://public.tableau.com/views/RegionalSampleWorkbook/Storms"
