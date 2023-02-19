@@ -17,13 +17,7 @@
         }
       }
     </script>
-    <script type="module" src="https://unpkg.com/playground-elements@0.17.0/playground-ide.js">   </script>
-    
-    <!-- Importing the Embedding API Library. -->
-    <!-- Learn more here:
-        https://help.tableau.com/current/api/embedding_api/en-us/docs/embedding_api_get.html -->
-    <script type="module" src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.js"></script>
-  </script>
+    <script type="module" src="https://unpkg.com/playground-elements@0.17.0/playground-ide.js"></script>
 </head>
 
 <body>
@@ -31,6 +25,11 @@
     <div style="width:800px; height:700px; border:1px solid green">
         <playground-ide editable-file-system line-numbers resizable>
 
+            <!-- Importing the Embedding API Library. -->
+            <!-- Learn more here:
+                https://help.tableau.com/current/api/embedding_api/en-us/docs/embedding_api_get.html -->
+            <script type="module" src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.js"></script>
+            
             <script type="sample/html" filename="index.html">
                 <!doctype html>
                 <body>
