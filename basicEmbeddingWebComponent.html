@@ -7,6 +7,8 @@
     <script type="importmap">
       {
         "imports": {
+            "comlink": "https://unpkg.com/browse/comlink@4.4.1",
+            "comlink/": "https://unpkg.com/browse/comlink@4.4.1/",
             "tslib": "https://unpkg.com/tslib@1.9.1/tslib.js",
             "lit": "https://cdn.skypack.dev/lit@^2.0.2",
             "lit/": "https://cdn.skypack.dev/lit@^2.0.2/"
@@ -23,25 +25,25 @@
 </head>
 
 <body>
-    <playground-ide editable-file-system line-numbers resizable>
-            
-        <script type="sample/html" filename="index.html">
-            <!doctype html>
-            <body>
-                <script type="module" src="./index.js">&lt;/script>
+    
+    <div style="width:800px; height:700px; border:1px solid green">
+        <playground-ide editable-file-system line-numbers resizable>
 
-                <!-- Defining the div container for the visualization. -->
-                <div style="width:800px; height:700px;">
+            <script type="sample/html" filename="index.html">
+                <!doctype html>
+                <body>
 
-                <!-- Initialization of the Tableau visualization via web component. See more properties here:
-                https://help.tableau.com/current/api/embedding_api/en-us/docs/embedding_api_configure.html -->
-                <tableau-viz id="tableauViz" src="https://public.tableau.com/views/RegionalSampleWorkbook/Storms"
-                    toolbar="bottom" hide-tabs>
-                </tableau-viz>
-            </body>
-        </script>
+                    <!-- Initialization of the Tableau visualization via web component. See more properties here:
+                    https://help.tableau.com/current/api/embedding_api/en-us/docs/embedding_api_configure.html -->
+                    <tableau-viz id="tableauViz" src="https://public.tableau.com/views/RegionalSampleWorkbook/Storms"
+                        toolbar="bottom" hide-tabs>
+                    </tableau-viz>
+                </body>
+            </script>
 
-    </playground-ide>
+        </playground-ide>
+    </div>
+        
 </body>
 
 </html>
