@@ -25,6 +25,7 @@
    }
   .playground {
     border: 1px solid #ccc;
+    width: 100%;
   }
   .sidebar {
     width: 15%;
@@ -43,9 +44,11 @@
   .playground > playground-file-editor {
     height: 50%;
     min-height: 300px;
+    width: 100%
   }
   .playground > playground-preview {
     height: auto;
+    min-height: 300px;
     border-top: 1px solid #ccc;
     --playground-preview-toolbar-background: #eaeaea;
   }
@@ -62,8 +65,6 @@
     
         <playground-project class="invisible" id="project1">
             <script type="sample/js" filename="index.js">
-import { TableauViz } from "/tableau.embedding.3.latest";
-import { TableauViz }
 
 const viz = new TableauViz();
 
