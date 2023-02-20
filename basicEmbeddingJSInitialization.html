@@ -21,35 +21,9 @@
     <script type="module" src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.js"></script>
 
 </head>
-<style>
-   #invisible {
-        display: none;
-   }
-  .playground {
-    width: 90%;
-    border: 1px solid #ccc;
-  }
-  .sidebar {
-    width: 10%;
-    border: 1px solid #blue;
-  }
-  #playground-container {
-      border:1px solid green; 
-      width:100%; 
-      height:100%;
-      display: flex;
-  }
-  .playground > playground-file-editor {
-    height: 50%;
-    min-height: 300px;
-  }
-  .playground > playground-preview {
-    height: auto;
-    border-top: 1px solid #ccc;
-    --playground-preview-toolbar-background: #eaeaea;
-  }
-</style>
+
 <body>
+
     
     <div>(Site header) A basic embedding web component, configured in javascript</div>    
     
@@ -100,7 +74,36 @@ document.getElementById("tableauViz").appendChild(viz);
             <playground-file-editor id="editor-html" project="project1"></playground-file-editor>
             <playground-preview project="project1"> </playground-preview>
         </span>
-
+        
+    </div>
+<style>
+   #invisible {
+        display: none;
+   }
+  .playground {
+    width: 90%;
+    border: 1px solid #ccc;
+  }
+  .sidebar {
+    width: 10%;
+    border: 1px solid #blue;
+  }
+  #playground-container {
+      border:1px solid green; 
+      width:100%; 
+      height:100%;
+      display: flex;
+  }
+  .playground > playground-file-editor {
+    height: 50%;
+    min-height: 300px;
+  }
+  .playground > playground-preview {
+    height: auto;
+    border-top: 1px solid #ccc;
+    --playground-preview-toolbar-background: #eaeaea;
+  }
+</style>
         
 </body>
 
