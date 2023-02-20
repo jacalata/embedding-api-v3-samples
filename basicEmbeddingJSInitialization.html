@@ -108,9 +108,11 @@ document.getElementById("tableauViz").appendChild(viz);
             sidebar goes here
         </span>
         <span class="playground" resizable>
-            <playground-file-editor id="editor-js" filename="index.js" project="project1"></playground-file-editor>
-            <playground-file-editor id="editor-html" filename="index.html" project="project1"></playground-file-editor>
-            <playground-file-editor id="editor-css" filename="style.css" project="project1"></playground-file-editor>
+            <div id="editors">
+                <playground-file-editor id="editor-js" filename="index.js" project="project1"></playground-file-editor>
+                <playground-file-editor id="editor-html" filename="index.html" project="project1"></playground-file-editor>
+                <playground-file-editor id="editor-css" filename="style.css" project="project1"></playground-file-editor>
+            </div>
             <playground-preview project="project1"> </playground-preview>
         </span>
         
