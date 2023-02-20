@@ -24,14 +24,14 @@
 </head>
 <style>
   .example {
-    width: 500px;
+    width: 100%;
     border: 1px solid #ccc;
   }
   .example > playground-file-editor {
-    height: 110px;
+    height: 400px;
   }
   .example > playground-preview {
-    height: 100px;
+    height: 400px;
     border-top: 1px solid #ccc;
     --playground-preview-toolbar-background: #eaeaea;
   }
@@ -40,7 +40,7 @@
     
     <h2>A basic embedding web component, configured in javascript</h2>
     
-    <div style="border:1px solid green; width:90%; height:90%">
+    <div id="playground-container" style="border:1px solid green; width:90%; height:90%">
         
         <playground-project id="project1">
             <script type="sample/js" filename="index.js">
@@ -72,7 +72,9 @@ document.getElementById("tableauViz").appendChild(viz);
         </playground-project>
         <div class="example">
             <playground-tab-bar project="project1 editor="editor1"></playground-tab-bar>
-            <playground-file-editor id="editor1" project="project1"></playground-file-editor>
+            <playground-file-editor id="editor1" project="project1" file="index.html"></playground-file-editor>
+            <playground-file-editor id="editor1" project="project1" file="index.js"></playground-file-editor>
+            <playground-file-editor id="editor1" project="project1" file="style.css"></playground-file-editor>
             <playground-preview project="project1"> </playground-preview>
         </div>
 
