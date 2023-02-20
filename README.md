@@ -6,7 +6,7 @@ This repository contains samples for the Tableau Embedding API V3.  Official dev
 Getting Started
 ---------------
 * Play with the interactive samples and edit the code for your requirements
-* Download the edited code to use on your own site. (Or [write your own code from scratch]]([https://tableau.github.io/server-client-python/](https://jacalata.github.io/embedding-api-v3-samples/getting-started.html))
+* Download the edited code to use on your own site. (Or [write your own code from scratch](https://jacalata.github.io/embedding-api-v3-samples/getting-started.html)
 * Use 'Issues' to note any bugs or to request new samples
 * Let us know if you have samples of your own you'd like to share
 * Check out the Tableau Developer Portal at http://developers.tableau.com to get a free Developer Sandbox and for tutorials, official docs, and the community forum
