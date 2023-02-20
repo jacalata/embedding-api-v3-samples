@@ -20,19 +20,30 @@
     </script>
     <script type="module" src="https://unpkg.com/playground-elements@0.17.0/playground-ide.js"></script>
 </head>
-
+<style>
+  .example {
+    width: 500px;
+    border: 1px solid #ccc;
+  }
+  .example > playground-file-editor {
+    height: 110px;
+  }
+  .example > playground-preview {
+    height: 100px;
+    border-top: 1px solid #ccc;
+    --playground-preview-toolbar-background: #eaeaea;
+  }
+</style>
 <body>
     
     <h2>A basic embedding web component, configured in javascript</h2>
     
     <div style="border:1px solid green; width:90%; height:90%">
-        <playground-ide editable-file-system line-numbers resizable line-wrapping>
-
-            <script type="sample/ts" filename="index.ts">
+        
+        <playground-project id="project1">
+            <script type="sample/js" filename="index.js">
 import { TableauViz } from "/tableau.embedding.3.latest";
 
-// Initialization of the Tableau visualization via JavaScript. Learn more here:
-// https://help.tableau.com/current/api/embedding_api/en-us/docs/embedding_api_configure.html
 const viz = new TableauViz();
 
 viz.src = "https://public.tableau.com/views/RegionalSampleWorkbook/Storms";
@@ -40,9 +51,9 @@ viz.toolbar = "hidden";
 
 document.getElementById("tableauViz").appendChild(viz);
 
-            </script>
-            
-            <script type="sample/html" filename="index.html">
+              </script>
+
+              <script type="sample/html" filename="index.html">
 <!doctype html>
 <head>
 </head>
@@ -52,10 +63,17 @@ document.getElementById("tableauViz").appendChild(viz);
         <div id="tableauViz"></div>
     </div>
 </body>
+       
             </script>
+            <script type="sample/css" filename="style.css">
 
-        </playground-ide>
-    </div>
+        </playground-project>
+        <div class="example">
+            <playground-tab-bar></playground-tab-bar>
+            <playground-file-editor project="project1" filename="index.ts"></playground-file-editor>
+            <playground-preview project="project1"> </playground-preview>
+        </div>
+
         
 </body>
 
