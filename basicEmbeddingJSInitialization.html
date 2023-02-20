@@ -44,14 +44,14 @@
   .playground > #editors { 
       display: flex;
       resize: vertical;
-      overflow: auto;
+      overflow: scroll;
       height: 50%;
       min-height: 300px;
    }
   playground-file-editor {
     width: 33%;
     resize: horizontal;
-    overflow: auto;
+    overflow: hidden;
     border: 2px solid black;
   }
   playground-preview {
@@ -75,7 +75,7 @@
     
         <playground-project class="invisible" id="project1">
             <script type="sample/js" filename="index.js">
-
+import { TableauViz } from "https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.js"
 const viz = new TableauViz();
 
 viz.src = "https://public.tableau.com/views/RegionalSampleWorkbook/Storms";
