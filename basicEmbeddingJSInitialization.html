@@ -23,10 +23,6 @@
    #invisible {
         display: none;
    }
-  .playground {
-    border: 1px solid #ccc;
-    width: 100%;
-  }
   .sidebar {
     width: 15%;
     border: 1px solid #blue;
@@ -41,11 +37,21 @@
       height:95%;
       display: flex;
   }
+  .playground {
+    border: 1px solid #ccc;
+    width: 100%;
+  }
+  .playground > #editors { 
+      resize: both;
+      overflow: auto;
+   }
   .playground > playground-file-editor {
     height: 50%;
     min-height: 300px;
     width: 100%;
-    resize: both;
+    resize: horizontal;
+    overflow: auto;
+    border: 2px solid black;
   }
   .playground > playground-preview {
     height: auto;
@@ -107,7 +113,7 @@ document.getElementById("tableauViz").appendChild(viz);
         <span class="sidebar">
             sidebar goes here
         </span>
-        <span class="playground" resizable>
+        <span class="playground">
             <div id="editors">
                 <playground-file-editor id="editor-js" filename="index.js" project="project1"></playground-file-editor>
                 <playground-file-editor id="editor-html" filename="index.html" project="project1"></playground-file-editor>
