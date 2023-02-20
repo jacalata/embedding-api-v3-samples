@@ -33,6 +33,12 @@
     width: 10%;
     border: 1px solid #blue;
   }
+  #playground-container {
+      border:1px solid green; 
+      width:100%; 
+      height:100%;
+      display: flex;
+  }
   .playground > playground-file-editor {
     height: 400px;
   }
@@ -45,7 +51,7 @@
 <body>
     
     
-    <div id="playground-container" style="border:1px solid green; width:100%; height:100%; display: flex;">
+    <div id="playground-container">
     
         <h2>A basic embedding web component, configured in javascript</h2>    
         <playground-project class="invisible" id="project1">
@@ -66,14 +72,21 @@ document.getElementById("tableauViz").appendChild(viz);
 <head>
 </head>
 <body>
-    <div style="width:50%; height:auto; border:1px solid blue">///
+    <div id="placeholder">
         <!-- Placeholder for the Tableau visualization. -->
         <div id="tableauViz"></div>
     </div>
 </body>
        
             </script>
-            <script type="sample/css" filename="style.css"></script>
+            <script type="sample/css" filename="style.css">
+            
+#placeholder {
+    width:95%;
+    height:auto;
+    border:1px solid blue;
+}
+            </script>
 
         </playground-project>
         
