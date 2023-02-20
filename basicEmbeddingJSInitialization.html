@@ -48,7 +48,7 @@
       height: 50%;
       min-height: 300px;
    }
-  .playground-file-container {
+  playground-file-editor {
     width: 33%;
     resize: horizontal;
     overflow: auto;
@@ -116,11 +116,9 @@ document.getElementById("tableauViz").appendChild(viz);
         </span>
         <span class="playground">
             <div id="editors">
-                <div id="js-file-view" class="playground-file-container">
-                    <playground-file-editor id="editor-js" filename="index.js" project="project1"></playground-file-editor>
-                </div>
-                <playground-file-editor id="editor-html" class="playground-file-container" filename="index.html" project="project1"></playground-file-editor>
-                <playground-file-editor id="editor-css" class="playground-file-container" filename="style.css" project="project1"></playground-file-editor>
+                <playground-file-editor id="editor-js" filename="index.js" project="project1"></playground-file-editor>
+                <playground-file-editor id="editor-html" filename="index.html" project="project1"></playground-file-editor>
+                <playground-file-editor id="editor-css" filename="style.css" project="project1"></playground-file-editor>
             </div>
             <playground-preview project="project1"> </playground-preview>
         </span>
