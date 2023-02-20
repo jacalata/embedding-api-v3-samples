@@ -19,6 +19,8 @@
       }
     </script>
     <script type="module" src="https://unpkg.com/playground-elements@0.17.0/playground-ide.js"></script>
+    <script type="module" src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.js"></script>
+
 </head>
 <style>
   .example {
@@ -69,7 +71,7 @@ document.getElementById("tableauViz").appendChild(viz);
 
         </playground-project>
         <div class="example">
-            <playground-tab-bar></playground-tab-bar>
+            <playground-tab-bar project="project1></playground-tab-bar>
             <playground-file-editor project="project1" filename="index.js"></playground-file-editor>
             <playground-preview project="project1"> </playground-preview>
         </div>
