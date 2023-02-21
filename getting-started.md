@@ -14,11 +14,11 @@ This guide has a few goals:
 2) to help you get started as a first-time developer on Tableau Embedding    
 3) to help you migrate existing content to v3.
 
+## Where else to look
+
 If you are looking for information on the previous API (v2), you can [read its documentation here](https://help.tableau.com/current/api/js_api/en-us/JavaScriptAPI/js_api.htm).
 
 If you have comments or feedback, please submit an [Issue](https://github.com/tableau/embedding-api-v3-samples/issues) on this Github repository.
-
-## Roadmap
 
 For information about the next release of the Tableau Embedding API see the [Tableau Embedding API v3 Developer Preview
 ](https://embedding.tableauusercontent.com/preview/getting-started-v3.html). 
@@ -42,16 +42,17 @@ Let’s take a closer look at the key parts of creating an embedded viz.
 
 ## Access the API
 
-Accessing the API happens similarly in all versions: You simply include the correct .js file, this time including the tableau-3.js (or a variation of it) from your Server. You can reference the .js from your on-premise Server, from Tableau Cloud, or from Tableau Public.
+The very first step is to include the embedding library/API as a javascript file, which should currently be called tableau-3.js (or a variation of it). You can reference the .js from your on-premise Server, from Tableau Cloud, or from Tableau Public. This is the first line of the code produced by the Embed Code, as shown above.
 
 ```
+HTML
 <script src = "https://myserver/javascripts/api/tableau.embedding.3.latest.js"></script>
 
 ```
 
 ## Create/Initialize the Viz
 
-With the new tableau-viz web component the viz will be created/initialized automatically on page load:
+With the new tableau-viz web component the viz will be created/initialized automatically on page load, just by adding the component in your HTML:
 
 HTML:
 
@@ -88,49 +89,7 @@ viz.src = 'http://my-server/views/my-workbook/my-view';
 document.getElementById('tableauViz').appendChild(viz); 
 ```
 
-Important notes about the above approach:
-
-* You can choose anywhere in your html to add the viz. To learn more [read about JavaScript’s document object.](https://www.w3schools.com/js/js_htmldom_document.asp)
-
-### Replacing old versions with v3
-
-In previous versions of Tableau Server, there existed a JavaScript API v1. You may still be using it if your embedding html looks like this: (note "v1" in the src attribute)
-
-```html
-<script type='text/javascript' src='https://myserver/javascripts/api/viz_v1.js'></script>
-<div class='tableauPlaceholder' style='width: 1500px; height: 827px;'>
-    <object class='tableauViz' width='1500' height='827' style='display:none;'>
-    <param name='host_url' value='https%3A%2F%2Fmyserver' /> 
-    <param name='embed_code_version' value='3' />
-    <param name='site_root' value='&#47;t&#47;Superstore' />
-    <param name='name' value='MyView' />
-    <param name='tabs' value='no' /><param name='toolbar' value='yes' />
-    <param name='showAppBanner' value='false' /></object>
-</div>
-
-```
-This html won't work with the embedding v3 library, and at some point will stop working to embed vizzes from newer servers. You can replace it with the first code snippet above - many of the params are no longer needed, but some like tabs and toolbar can be replaced with attributes on the tableau-viz element.
-
-
-If your existing code was written in v2, you needed to use both html and javascript to initialize your embedded viz. You can still do this in v3, and the simplest way to upgrade from v2 is to leave the html in place and begin using the javascript initialization code from v3. The above example of initialization with javascript uses an empty div and getElementById, like the JavaScript API v2: it may be possible for you to change from v2 to v3 without even editing your html, but the javascript initialization code is different enough that you will need to rewrite it.
- 
-HTML (v2 - will also work in v3)
-
-```html
-<div id='tableauViz'></div>
-```
-
-JavaScript (v2 - will not work in v3)
-
-```javascript
-import v2_library.js
-
-let placeholderDiv = document.getElementById("tableauViz");
-let src = "http://my-server/views/my-workbook/my-view";
-let options = {}
-let viz = new tableau.Viz(placeholderDiv, url, options);
-```
-(Note: what error do you see when you try the v2 code but imported the v3 library?)
+You can choose anywhere in your html to add the viz - we gave it the id 'tableauViz' for convenience. To learn more [read about JavaScript’s document object.](https://www.w3schools.com/js/js_htmldom_document.asp)
 
 ## Configure the viz
     
@@ -207,13 +166,56 @@ In the above example, onMarksSelected is the event defined by the embedding libr
 
 
 
+### Replacing old versions with v3
+
+In previous versions of Tableau Server, there existed a JavaScript API v1. You may still be using it if your embedding html looks like this: (note "v1" in the src attribute)
+
+```html
+<script type='text/javascript' src='https://myserver/javascripts/api/viz_v1.js'></script>
+<div class='tableauPlaceholder' style='width: 1500px; height: 827px;'>
+    <object class='tableauViz' width='1500' height='827' style='display:none;'>
+    <param name='host_url' value='https%3A%2F%2Fmyserver' /> 
+    <param name='embed_code_version' value='3' />
+    <param name='site_root' value='&#47;t&#47;Superstore' />
+    <param name='name' value='MyView' />
+    <param name='tabs' value='no' /><param name='toolbar' value='yes' />
+    <param name='showAppBanner' value='false' /></object>
+</div>
+
+```
+This html won't work with the embedding v3 library, and at some point will stop working to embed vizzes from newer servers. You can replace it with the first code snippet above - many of the params are no longer needed, but some like tabs and toolbar can be replaced with attributes on the tableau-viz element.
+
+
+If your existing code was written in v2, you needed to use both html and javascript to initialize your embedded viz. You can still do this in v3, and the simplest way to upgrade from v2 is to leave the html in place and begin using the javascript initialization code from v3. The above example of initialization with javascript uses an empty div and getElementById, like the JavaScript API v2: it may be possible for you to change from v2 to v3 without even editing your html, but the javascript initialization code is different enough that you will need to rewrite it.
+ 
+HTML (v2 - will also work in v3)
+
+```html
+<div id='tableauViz'></div>
+```
+
+JavaScript (v2 - will not work in v3)
+
+```javascript
+import v2_library.js
+
+let placeholderDiv = document.getElementById("tableauViz");
+let src = "http://my-server/views/my-workbook/my-view";
+let options = {}
+let viz = new tableau.Viz(placeholderDiv, url, options);
+```
+(Note: what error do you see when you try the v2 code but imported the v3 library?)
+
+
+    
 
 ## Interacting with the Viz
 
-All of the above discusses how to initialize the Viz and to configure it during initial load. A key benefit to v3 is how easy it is to go from this simple static embed scenario to one where you create interactions with the viz via API — filter, react to user selections, change parameters, query data, etc. — after the Viz loads. For this functionality, you do need to write javascript code. 
+All of the above discusses how to initialize the Viz and to configure it during initial load. The real magic in the embedding library is how easy it is to go from this simple static embed scenario to one where you create interactions with the viz via API — filter, react to user selections, change parameters, query data, etc. For this functionality, you do need to write javascript code. 
     
 
 Important note: Changing the properties/filters/parameters after the viz has loaded will re-render the viz (Todo: or event listeners?). This is especially important to note for filtering (todo: why?). The addFilter method is not intended to be used after the viz has been initialized, instead use applyFilterAsync/other Filtering methods for updates.
+
 
 
 ### Accessing the Viz object
@@ -259,7 +261,7 @@ let sameSheet = workbook.publishedSheetsInfo()  # should that be a getter or a p
     
 
     These are the options you can use to define the data that is returned:
-    (is this missing some that also existed in v2?)
+    (todo: is this missing some that also existed in v2?)
 |Option	|Accepts	|Description	|
 |---	|---	|---	|
 |columnsToIncludeById	|int[] (columnID)	|Allows you to specify the list of columnIDs to return	|
@@ -269,7 +271,7 @@ let sameSheet = workbook.publishedSheetsInfo()  # should that be a getter or a p
 
 There are also new supporting properties on other objects that can help you set the values for the filter, such as the fieldID property of Column object, for use in columnsToInclude.
 
-*In v2, getUnderlyingDataAsync() was deprecated and only available in Tableau 2020.1 or earlier. Therefore, it is not available in v3. Instead [use getUnderlyingTablesAsync() and getUnderlyingTableDataAsync()](https://help.tableau.com/current/api/js_api/en-us/JavaScriptAPI/js_api_ref.htm#gettabledata).
+*If you are working on older code, the getUnderlyingDataAsync() method was deprecated and only works in Tableau 2020.1 or earlier. Therefore, it is not available in v3. Instead [use getUnderlyingTablesAsync() and getUnderlyingTableDataAsync()](https://help.tableau.com/current/api/js_api/en-us/JavaScriptAPI/js_api_ref.htm#gettabledata).
 
     
 ### Filtering, Selecting Marks, and Changing Parameters
@@ -288,7 +290,7 @@ workbook.changeParameterValueAsync("Product Type", "Coffee");
 
 ```
 
-*changeParameterValueAsync is available from Tableau Server 2022.3, Use tableau.embedding.3.3.0.js version for this functionality.*
+*changeParameterValueAsync is available from Tableau Server 2022.3, Use tableau.embedding.3.3.0.js version (or higher) for this functionality.*
 
 ```javascript
 worksheet.selectMarksAsync("Product", "Caffe Latte", 
