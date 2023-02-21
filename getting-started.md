@@ -38,7 +38,7 @@ The easiest way to start building with embedded vizzes is by copying the snippet
 </tableau-viz>
 ```
 
-Let’s take a closer look at the key parts of creating an embedded viz.
+Now, to understand the code you've copied, let’s take a closer look at the key parts of creating an embedded viz.
 
 ## Access the API
 
