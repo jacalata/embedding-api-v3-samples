@@ -42,21 +42,22 @@ Let’s take a closer look at the key parts of creating an embedded viz.
 
 ## Access the API
 
-The very first step is to include the embedding library/API as a javascript file, which should currently be called tableau-3.js (or a variation of it). You can reference the .js from your on-premise Server, from Tableau Cloud, or from Tableau Public. This is the first line of the code produced by the Embed Code, as shown above.
+The very first step is to include the embedding library/API as a javascript file, which should currently be called tableau-3.js (or a variation of it). You can reference the .js from your on-premise Server, from Tableau Cloud, or from Tableau Public. You can use the file "tableau.embedding.3.latest.js" to make sure you are getting the most recently released features in v3 (this is what the Embed Code gives you, as shown above), or you can use a file with a specific version number so that you know the features available will not change at all, like the line below:
 
 ```
 HTML
-<script src = "https://myserver/javascripts/api/tableau.embedding.3.latest.js"></script>
+<script src = "https://myserver/javascripts/api/tableau.embedding.3.2.23.js'.js"></script>
 
 ```
 
 ## Create/Initialize the Viz
 
-With the new tableau-viz web component the viz will be created/initialized automatically on page load, just by adding the component in your HTML:
+With the new tableau-viz web component the viz will be created/initialized automatically on page load, just by adding the component in your HTML. The only absolutely necessary piece is the src, which defines which viz you are actually embedding:
 
-HTML:
+(todo: the id is not necessary but very strongly encouraged?)
 
-```html
+```
+html
 <tableau-viz id="tableauViz" 
       src='http://my-server/views/my-workbook/my-view'>
 </tableau-viz>
@@ -225,7 +226,7 @@ If you [initialized the Viz in JavaScript](#alternative-approach-initialization-
     
 ```javascript
     
-import {TableauViz} from '../tableau.embedding.3.0.0-alpha.23.js'
+import {TableauViz} from '../tableau.embedding.3.2.23.js'
 
 let viz = document.getElementById('tableauViz');
 ````
