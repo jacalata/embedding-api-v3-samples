@@ -63,7 +63,7 @@ HTML:
 
 
 
-### Alternative Approach: Initialization via JavaScript
+**Alternative Approach: Initialization via JavaScript**
 
 In v2, you always had to actually create the viz in js code. In v3, you don't have to do that, but you may prefer to set up the viz via JavaScript instead of the above HTML <tableau-viz> component approach. Here is an example that demonstrates the same functionality using JavaScript and html in v3:
 
@@ -132,7 +132,7 @@ let viz = new tableau.Viz(placeholderDiv, url, options);
 ```
 (Note: what error do you see when you try the v2 code but imported the v3 library?)
 
-## Configuration:
+## Configure the viz
     
 You can modify some attributes of the viz before creation by setting properties of the viz component in html, or by passing the values as an options object in javascript
 
