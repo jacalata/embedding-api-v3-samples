@@ -17,46 +17,37 @@
         }
       }
     </script>
-    <script type="module" src="https://unpkg.com/playground-elements@0.17.0/playground-ide.js"></script>
+    <script type="module" src="https://unpkg.com/playground-elements@0.17.0/playground-ide.js"></script>    
+    <script type="module" src="https://unpkg.com/playground-elements@0.17.0/playground-project.js"></script>
+    <script type="module" src="https://unpkg.com/playground-elements@0.17.0/playground-file-editor.js"></script>
 </head>
 
 <body>
     
     <h2>An example of source code being embedded in a html page</h2> 
-
-<p>
     
-This repository contains samples for the Tableau Embedding API V3.  Official developer documentation can be found [here](https://help.tableau.com/current/api/embedding_api/en-us/index.html).
-
-<h2>
-Getting Started
-</h2>
-<li>
-<ul>Play with the interactive samples and edit the code for your requirements
-</ul><ul>
-Download the edited code to use on your own site. (Or [write your own code from scratch](https://jacalata.github.io/embedding-api-v3-samples/getting-started.html))
-</ul><ul>
-Use 'Issues' to note any bugs or to request new samples
-</ul><ul>
-Let us know if you have samples of your own you'd like to share
-</ul><ul>
-Check out the Tableau Developer Portal at http://developers.tableau.com to get a free Developer Sandbox and for tutorials, official docs, and the community forum
-</ul>
-</li>
-<h2>
-Embedding API V3 Samples<h2>
-These are created and maintained by Tableau.
+    This repository contains samples for the Tableau Embedding API V3.  Official developer documentation can be found [here](https://help.tableau.com/current/api/embedding_api/en-us/index.html).
     
-</p>
+    <h3>Getting Started</h3>
+    <li>
+        <ul>Play with the interactive samples and edit the code for your requirements</ul>
+        <ul></ul>Download the edited code to use on your own site. (Or [write your own code from scratch](https://jacalata.github.io/embedding-api-v3-samples/getting-started.html))</ul>
+    </li>
+    <h3>Embedding API V3 Samples<h3>
+    These are created and maintained by Tableau.
+        
     <div style="border:1px solid green; width:90%; height:90%">
-        <playground-ide editable-file-system line-numbers resizable>
-            
-            <script type="sample/json" filename="JWT.java" src="https://raw.githubusercontent.com/tableau/connected-apps-jwt-samples/main/java/src/main/java/JWT.java">
-            </script>
-          
-            <script type="sample/python" filename="JWT.py" src="https://raw.githubusercontent.com/tableau/connected-apps-jwt-samples/main/python/get_jwt.py">
-            </script>
-        </playground-ide>
+    <playground-project id="project1" project-src="./project.json">
+    </playground-project>
+        
+    <playground-file-editor
+        project="project1"
+        filename="JWT.java"
+    ></playground-file-editor>
+    <playground-file-editor
+        project="project1"
+        filename="JWT.py"
+    ></playground-file-editor>
     </div>
         
 </body>
