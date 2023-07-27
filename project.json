@@ -1,0 +1,10 @@
+{
+  "files": {
+    "https://github.com/tableau/connected-apps-jwt-samples/edit/main/java/src/main/java/JWT.java": {
+      label: "Java"
+    },
+    "JWT.py": {
+      "label": "Python"
+    }
+  }
+}
